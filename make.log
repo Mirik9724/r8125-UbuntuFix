@@ -1,0 +1,37 @@
+DKMS make.log for r8125-9.011.00 for kernel 6.11.0-24-generic (x86_64)
+Пн 21 июл 2025 09:23:37 +10
+make: вход в каталог «/usr/src/linux-headers-6.11.0-24-generic»
+warning: the compiler differs from the one used to build the kernel
+  The kernel was built by: x86_64-linux-gnu-gcc-13 (Ubuntu 13.3.0-6ubuntu2~24.04) 13.3.0
+  You are using:           gcc-13 (Ubuntu 13.3.0-6ubuntu2~24.04) 13.3.0
+  CC [M]  /var/lib/dkms/r8125/9.011.00/build/r8125_n.o
+  CC [M]  /var/lib/dkms/r8125/9.011.00/build/rtl_eeprom.o
+  CC [M]  /var/lib/dkms/r8125/9.011.00/build/rtltool.o
+/var/lib/dkms/r8125/9.011.00/build/rtl_eeprom.c:96:5: warning: no previous prototype for ‘rtl8125_eeprom_cmd_done’ [-Wmissing-prototypes]
+   96 | int rtl8125_eeprom_cmd_done(struct rtl8125_private *tp)
+      |     ^~~~~~~~~~~~~~~~~~~~~~~
+/var/lib/dkms/r8125/9.011.00/build/r8125_n.c:2396:6: warning: no previous prototype for ‘ClearEthPhyOcpBit’ [-Wmissing-prototypes]
+ 2396 | void ClearEthPhyOcpBit(struct rtl8125_private *tp, u16 addr, u16 mask)
+      |      ^~~~~~~~~~~~~~~~~
+/var/lib/dkms/r8125/9.011.00/build/r8125_n.c:2405:6: warning: no previous prototype for ‘SetEthPhyOcpBit’ [-Wmissing-prototypes]
+ 2405 | void SetEthPhyOcpBit(struct rtl8125_private *tp,  u16 addr, u16 mask)
+      |      ^~~~~~~~~~~~~~~
+/var/lib/dkms/r8125/9.011.00/build/r8125_n.c:6254:20: error: initialization of ‘int (*)(struct net_device *, struct ethtool_keee *)’ from incompatible pointer type ‘int (*)(struct net_device *, struct ethtool_eee *)’ [-Werror=incompatible-pointer-types]
+ 6254 |         .get_eee = rtl_ethtool_get_eee,
+      |                    ^~~~~~~~~~~~~~~~~~~
+/var/lib/dkms/r8125/9.011.00/build/r8125_n.c:6254:20: note: (near initialization for ‘rtl8125_ethtool_ops.get_eee’)
+/var/lib/dkms/r8125/9.011.00/build/r8125_n.c:6255:20: error: initialization of ‘int (*)(struct net_device *, struct ethtool_keee *)’ from incompatible pointer type ‘int (*)(struct net_device *, struct ethtool_eee *)’ [-Werror=incompatible-pointer-types]
+ 6255 |         .set_eee = rtl_ethtool_set_eee,
+      |                    ^~~~~~~~~~~~~~~~~~~
+/var/lib/dkms/r8125/9.011.00/build/r8125_n.c:6255:20: note: (near initialization for ‘rtl8125_ethtool_ops.set_eee’)
+/var/lib/dkms/r8125/9.011.00/build/r8125_n.c:13349:1: warning: no previous prototype for ‘rtl8125_enable_msix’ [-Wmissing-prototypes]
+13349 | rtl8125_enable_msix(struct rtl8125_private *tp)
+      | ^~~~~~~~~~~~~~~~~~~
+/var/lib/dkms/r8125/9.011.00/build/r8125_n.c:13377:6: warning: no previous prototype for ‘rtl8125_dump_msix_tbl’ [-Wmissing-prototypes]
+13377 | void rtl8125_dump_msix_tbl(struct rtl8125_private *tp)
+      |      ^~~~~~~~~~~~~~~~~~~~~
+cc1: some warnings being treated as errors
+make[2]: *** [scripts/Makefile.build:244: /var/lib/dkms/r8125/9.011.00/build/r8125_n.o] Ошибка 1
+make[1]: *** [/usr/src/linux-headers-6.11.0-24-generic/Makefile:1932: /var/lib/dkms/r8125/9.011.00/build] Ошибка 2
+make: *** [Makefile:224: __sub-make] Ошибка 2
+make: выход из каталога «/usr/src/linux-headers-6.11.0-24-generic»
